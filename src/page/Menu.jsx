@@ -10,27 +10,39 @@ import Seblak from "../assets/Seblak.jpg"
 import estehsuwegerwir from "../assets/estehsuwegerwir.jpg"
 import Bakso from "../assets/Bakso.jpg"
 import Container from "react-bootstrap/Container";
-import Swal  from "sweetalert2";
+import Swal from "sweetalert2";
+import { useState } from "react";
 
 export default function Menu() {
   const HandleBeli = () => {
-Swal.fire({
-  title: "Succes",
-  icon: "success",
-  draggable: true
-});
+    Swal.fire({
+      title: "Succes",
+      icon: "success",
+      draggable: true
+    });
   };
+
+const [search, setSearch] = useState("");
+ 
+ const menu = [
+  { nama:"Ayam Geprek Pak Dicky", harga:"25000", Img:"AyamChicken"},
+  { nama:"Seblak Asli cipanas", harga:"10000", Img:"Seblak"},
+  { nama:"Es Teh Saxanic", harga:"3000", Img:"estehsuwegerwir"},
+  { nama:"Bakso SApi", harga:"12000", Img:"Bakso"}
+ ]
+const filteredMenu = menu.filter((item) =>
+  item.nama.toLowerCase().includes(search.toLocaleLowerCase));
 
   return (
     <div className="container">
       <div className="input-group inputGroup mt-4 w-100">
         <input
-          type="text"
-          id="searchInput"
-          className="form-control"
-          placeholder="🔍 Cari nama makanan..."
-          aria-label="Cari nama makanan"
-        />
+  type="text"
+  className="form-control"
+  placeholder="🔍 Cari nama makanan..."
+  value={search}
+  onChange={(e) => setSearch(e.target.value)}
+/>
       </div>
       <div>
         <Container id="Menu" className="mt-20 mb-5">
@@ -61,14 +73,13 @@ Swal.fire({
                     </div>
                   </div>
                   <button
+                    onClick={HandleBeli}
                     className="w-100 py-2 fw-semibold text-white border-0"
                     style={{
                       backgroundColor: '#dc3545',
                       borderRadius: '10px'
                     }}
                   >
-
-
                     Beli
                   </button>
                 </Card.Body>
@@ -98,15 +109,14 @@ Swal.fire({
                       Rp 30.000
                     </div>
                   </div>
-                  <button
+                   <button
+                    onClick={HandleBeli}
                     className="w-100 py-2 fw-semibold text-white border-0"
                     style={{
                       backgroundColor: '#dc3545',
                       borderRadius: '10px'
                     }}
                   >
-
-
                     Beli
                   </button>
                 </Card.Body>
@@ -137,14 +147,13 @@ Swal.fire({
                     </div>
                   </div>
                   <button
+                    onClick={HandleBeli}
                     className="w-100 py-2 fw-semibold text-white border-0"
                     style={{
                       backgroundColor: '#dc3545',
                       borderRadius: '10px'
                     }}
                   >
-
-
                     Beli
                   </button>
                 </Card.Body>
@@ -162,7 +171,7 @@ Swal.fire({
                 <Card.Body>
                   <Card.Title className="fw-bold fs-5">Bakso SApi</Card.Title>
                   <Card.Text className="text-muted small">
-                    Vital!! Bakso full daging tanpa tepung, harga terjangkau Cocok untuk Kau yang meskin
+                    Vital!! Bakso full daging tanpa tepung, harga terjangkau Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et provident veni
                   </Card.Text>
                   <div className="d-flex justify-content-between align-items-center mb-3">
                     <div className="d-flex align-items-center border rounded-3 px-2 py-1 bg-light">
@@ -174,16 +183,16 @@ Swal.fire({
                       Rp 30.000
                     </div>
                   </div>
-                 <button
-  onClick={HandleBeli}
-  className="w-100 py-2 fw-semibold text-white border-0"
-  style={{
-    backgroundColor: '#dc3545',
-    borderRadius: '10px'
-  }}
->
-  Beli
-</button>
+                  <button
+                    onClick={HandleBeli}
+                    className="w-100 py-2 fw-semibold text-white border-0"
+                    style={{
+                      backgroundColor: '#dc3545',
+                      borderRadius: '10px'
+                    }}
+                  >
+                    Beli
+                  </button>
                 </Card.Body>
               </Card>
             </Col>
