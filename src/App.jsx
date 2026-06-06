@@ -7,6 +7,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Home from './page/Home';
 import Menu from './page/Menu';
+import 'remixicon/fonts/remixicon.css';
 
 
 {
@@ -18,9 +19,10 @@ function App() {
     <>
      <Navbar expand="lg" className="bg-black text-white">
       <Container fluid>
-        <Navbar.Brand href="#" className="text-white">Navbar scroll</Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbarScroll" />
-        <Navbar.Collapse id="navbarScroll">
+        <i class="ri-restaurant-line ml-2"></i>
+        <Navbar.Brand href="#" className="text-white ml-6">Navbar scroll</Navbar.Brand>
+        <Navbar.Toggle aria-controls="navbarScroll" className="" />
+        <Navbar.Collapse id="navbarScroll" className="ml-20">
           <Nav
             className="me-auto my-2 my-lg-0"
             style={{ maxHeight: '100px' }}
