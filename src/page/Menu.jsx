@@ -34,12 +34,7 @@ useEffect(() => {
     .catch((err) => console.error(err));
 }, []);
 
- const menu = [
-  { nama:"Ayam Geprek Pak Dicky", harga:"25000", Img:"AyamChicken"},
-  { nama:"Seblak Asli cipanas", harga:"10000", Img:"Seblak"},
-  { nama:"Es Teh Saxanic", harga:"3000", Img:"estehsuwegerwir"},
-  { nama:"Bakso SApi", harga:"12000", Img:"Bakso"}
- ]
+ 
 const filteredMenu = products.filter((item) =>
   item.name.toLowerCase().includes(search.toLowerCase())
 );
